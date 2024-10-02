@@ -30,3 +30,21 @@ def achar_a ():
     frase = "A Amazônia é uma área incrível."
     contar_letra_a(frase)
 
+def default():
+    return 'Opção inválida'
+
+opcao: int=0
+while(opcao!=3):
+    print('Escolha opção')
+    print('1-Exercicio Fibonacci')
+    print('2-Achar letra a')
+    print('sair')
+    opcao =int(input('digitar opcao: '))
+    switch= {
+        1: exercicio_fibonacci,
+        2:  achar_a,
+        3: exit
+    }
+    funcao = switch.get(opcao, default)
+    funcao()
+
